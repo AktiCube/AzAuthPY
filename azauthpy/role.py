@@ -1,8 +1,8 @@
-class Role:
+class Role(object):
     def __init__(self, id, name, color):
-        self.id = id
-        self.name = name
-        self.color = color
+        self._id = id
+        self._name = name
+        self._color = color
     
     def __str__(self):
         return self.name
@@ -17,12 +17,12 @@ class Role:
 
     @property
     def id(self):
-        return self.id
+        return self._id
     
     @property
     def name(self):
-        return self.name
+        return self._name
     
     @property
     def color(self):
-        return self.color
+        return self._color
