@@ -1,4 +1,7 @@
 class Role(object):
+    """
+    An object to represent a role
+    """
     def __init__(self, id, name, color):
         self._id = id
         self._name = name
@@ -15,14 +18,23 @@ class Role(object):
             return self.id == __o.id
         return False
 
+    """
+    :class:`int`: Returns the id of the role
+    """
     @property
-    def id(self):
+    def id(self) -> int:
         return self._id
-    
+
+    """
+    :class:`str`: Returns the name of the role
+    """
     @property
-    def name(self):
+    def name(self) -> str:
         return self._name
-    
+
+    """
+    :class:`str`: Returns the hexadecimal color of the role
+    """
     @property
-    def color(self):
+    def color(self) -> str:
         return self._color
