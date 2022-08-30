@@ -13,7 +13,7 @@ pip uninstall azauthpy
 
 ## Usage
 ```python
-from azauthpy import AzAuth, LoginResult, LoginState
+from azauthpy import AzAuth, LoginState
 
 def login(email: str, password: str) -> User:
     client = AzAuth('https://www.akticube.fr')
@@ -23,10 +23,13 @@ def login(email: str, password: str) -> User:
     if result.status == LoginState.NEEDS_SECURE_CODE:
         code = input('Please enter your 2FA Code: ')
         result = client.login(email, password, code)
-    
+
     if result.status == LoginState.SUCCESS:
         print(f"Welcome {result.user.username}!")
         return result.user
+    elif result.status == LoginState.USER_BANNED:
+        print('You are banned!')
+        return None
     else:
         print("Login failed!")
         return None
