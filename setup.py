@@ -22,7 +22,7 @@ setup(
     author='AktiCube',
     author_email='contact@akticube.fr',
     license='MIT',
-    description='A python library for your Azuriom website authentication  API',
+    description='A python library for your Azuriom website auth API',
     long_description=readme,
     long_description_content_type="text/markdown",
     url='https://github.com/AktiCube/AzAuthPY',
