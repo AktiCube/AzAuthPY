@@ -42,3 +42,7 @@ class AzAuth:
             return User(result)
         else:
             return None
+
+    def logout(self, access_token: str) -> bool:
+        request = requests.post(self.baseurl + '/logout', data={ 'access_token': access_token })
+        return request.status_code == 200
