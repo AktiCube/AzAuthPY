@@ -15,10 +15,6 @@ pip uninstall azauthpy
 ```python
 from azauthpy import AzAuth
 
-auth = AzAuth("https://example.com", "username", "password")
-
-if auth.login():
-    print("Logged in!")
-else:
-    print("Failed to login!")
+def login(email, password):
+    // TODO: Make the documentation
 ```
