@@ -34,3 +34,11 @@ class AzAuth:
                 return LoginResult(LoginState.NEEDS_SECURE_CODE)
             else:
                 return LoginResult(LoginState.FAILED)
+
+    def verify(self, access_token: str) -> User:
+        request = requests.post(self.baseurl + '/verify', data={ 'access_token': access_token })
+        result = request.json()
+        if request.status_code == 200:
+            return User(result)
+        else:
+            return None
