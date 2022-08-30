@@ -2,11 +2,11 @@ from setuptools import setup
 import re
 
 requirements = []
-with open('requirements.txt') as f:
+with open('requirements.txt', 'r', encoding="UTF-8") as f:
   requirements = f.read().splitlines()
 
 version = ''
-with open('azauthpy/__init__.py') as f:
+with open('azauthpy/__init__.py', 'r', encoding="UTF-8") as f:
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE).group(1)
 
 if not version:
