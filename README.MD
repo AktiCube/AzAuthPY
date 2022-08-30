@@ -13,8 +13,21 @@ pip uninstall azauthpy
 
 ## Usage
 ```python
-from azauthpy import AzAuth
+from azauthpy import AzAuth, LoginResult, LoginState
 
-def login(email, password):
-    // TODO: Make the documentation
+def login(email: str, password: str) -> LoginResult:
+    client = AzAuth('https://www.akticube.fr')
+
+    result = client.login(email, password)
+
+    if result.status == LoginState.NEEDS_SECURE_CODE:
+        code = input('Please enter your 2FA Code: ')
+        result = client.login(email, password, code)
+    
+    if result.status == LoginState.SUCCESS:
+        print(f"Welcome {result.user.username}!")
+        return result
+    else:
+        print("Login failed!")
+        return None
 ```
