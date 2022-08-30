@@ -1,7 +1,7 @@
-from . import Role
+from .role import Role
 from datetime import datetime
 
-class User:
+class User(object):
     def __init__(self, data: dict) -> None:
         self.data = data
 
@@ -9,7 +9,7 @@ class User:
         return self.username
     
     def __repr__(self) -> str:
-        return f"User(id={self.id}, username={self.username}, uuid={self.uuid}, email_verified={self.email_verified}, money={self.money}, role={self.role}, banned={self.banned}, created_at={self.created_at}"	
+        return f"User(id={self.id}, username={self.username}, uuid={self.uuid}, email_verified={self.email_verified}, money={self.money}, role={self.role}, banned={self.banned}, created_at={self.created_at})"	
 
     def __eq__(self, __o: object) -> bool:
         if isinstance(__o, User):
