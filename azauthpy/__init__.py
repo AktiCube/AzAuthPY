@@ -13,6 +13,6 @@ __license__ = 'MIT'
 __copyright__ = 'Copyright 2020-present AktiCube'
 __version__ = '1.0.0'
 
-from .azauth import AzAuth
+from .azauth import AzAuth, LoginState, LoginResult
 from .user import User
 from .role import Role
