@@ -18,23 +18,23 @@ class Role(object):
             return self.id == __o.id
         return False
 
-    """
-    :class:`int`: Returns the id of the role
-    """
     @property
     def id(self) -> int:
+        """
+        :class:`int`: Returns the id of the role
+        """
         return self._id
 
-    """
-    :class:`str`: Returns the name of the role
-    """
     @property
     def name(self) -> str:
+        """
+        :class:`str`: Returns the name of the role
+        """
         return self._name
 
-    """
-    :class:`str`: Returns the hexadecimal color of the role
-    """
     @property
     def color(self) -> str:
+        """
+        :class:`str`: Returns the hexadecimal color of the role
+        """
         return self._color

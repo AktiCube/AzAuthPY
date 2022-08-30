@@ -19,65 +19,65 @@ class User(object):
             return self.id == __o.id
         return False
 
-    """
-    :class:`int`: Returns the id of the user
-    """
     @property
     def id(self) -> int:
+        """
+        :class:`int`: Returns the id of the user
+        """
         return self.data['id']
 
-    """
-    :class:`str`: Returns the username of the user
-    """
     @property
     def username(self) -> str:
+        """
+        :class:`str`: Returns the username of the user
+        """
         return self.data['username']
 
-    """
-    :class:`str`: Returns the uuid of the user
-    """
     @property
     def uuid(self) -> str:
+        """
+        :class:`str`: Returns the uuid of the user
+        """
         return self.data['uuid']
 
-    """
-    :class:`bool`: Returns a boolean of whether the user's email is verified
-    """
     @property
     def email_verified(self) -> bool:
+        """
+        :class:`bool`: Returns a boolean of whether the user's email is verified
+        """
         return self.data['email_verified']
 
-    """
-    :class:`float`: Returns the amount of money the user has
-    """
     @property
     def money(self) -> float:
+        """
+        :class:`float`: Returns the amount of money the user has
+        """
         return self.data['money']
 
-    """
-    :class:`Role`: Returns the role of the user
-    """
     @property
     def role(self) -> Role:
+        """
+        :class:`Role`: Returns the role of the user
+        """
         return Role(self.data['role']['id'], self.data['role']['name'], self.data['role']['color'])
 
-    """
-    :class:`bool`: Returns a boolean of whether the user is banned
-    """
     @property
     def banned(self) -> bool:
+        """
+        :class:`bool`: Returns a boolean of whether the user is banned
+        """
         return self.data['banned']
 
-    """
-    :class:`datetime`: Returns the datetime of when the user was created
-    """
     @property
     def created_at(self) -> datetime:
+        """
+        :class:`datetime`: Returns the datetime of when the user was created
+        """
         return datetime.fromisoformat(self.data['created_at'])
 
-    """
-    :class:`bool`: Returns a boolean of whether the user is an admin
-    """
     @property
     def access_token(self) -> str:
+        """
+        :class:`bool`: Returns a boolean of whether the user is an admin
+        """
         return self.data['access_token']
