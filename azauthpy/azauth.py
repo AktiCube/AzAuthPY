@@ -9,6 +9,7 @@ class LoginState(enum):
     SUCCESS = 0
     NEEDS_SECURE_CODE = 1
     FAILED = 2
+    USER_BANNED = 3
 
 class LoginResult(object):
     """
@@ -51,6 +52,8 @@ class AzAuth:
         else:
             if result['status'] == 'pending' and result['reason'] == '2fa':
                 return LoginResult(LoginState.NEEDS_SECURE_CODE)
+            elif result['status'] == 'error' and result['reason'] == 'user_banned':
+                return LoginResult(LoginState.USER_BANNED)
             else:
                 return LoginResult(LoginState.FAILED)
 
