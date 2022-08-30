@@ -1,24 +1,24 @@
 import requests
-from enum import enum
-from . import User
+from aenum import enum
+from .user import User
 
 class LoginState(enum):
     SUCCESS = 0
     NEEDS_SECURE_CODE = 1
     FAILED = 2
 
-class LoginResult:
+class LoginResult(object):
     def __init__(self, state: LoginState, user: User = None) -> None:
-        self.state = state
-        self.user = user
-    
+        self._state = state
+        self._user = user
+
     @property
     def user(self) -> User:
-        return self.user
-    
+        return self._user
+
     @property
     def status(self) -> LoginState:
-        return self.state
+        return self._state
 
 class AzAuth:
     def __init__(self, url: str) -> None:
