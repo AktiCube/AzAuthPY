@@ -13,7 +13,7 @@ pip uninstall azauthpy
 
 ## Usage
 ```python
-from azauthpy import AzAuth, LoginState
+from azauthpy import AzAuth, LoginState, User
 
 def login(email: str, password: str) -> User:
     client = AzAuth('https://www.akticube.fr')
